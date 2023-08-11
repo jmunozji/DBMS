@@ -1,7 +1,7 @@
 ---
-title:  "Unit 2. Oracle connection."
+title:  "Oracle connection"
 ---
-# Connect to de database
+# Oracle connection
 
 In the previous notes we have installed the Oracle Server and the tools we can use to connect to the database in the same machine:
 
@@ -49,7 +49,7 @@ You can leave the rest of options without changing anything. Give the rule the n
 
 Now try to open the OEM again in your web browser.
 
-> Remember *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896).
+> Remember *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896){:target="_blank"}.
 
 Once the TLS problem is solved you will have access to the OEM.
 ![connection](assets/Oracle_connection/connection06.png)
@@ -84,9 +84,9 @@ To connect using OEM there was no need no install any SW. Now you have to instal
 
 We saw when we installed the server how to install the SQL Developer. Just remember:
 
-- Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/).
+- Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/){:target="_blank"}.
 - Follow the installation instructions in that page.
-  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here].(https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd)
+  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here].(https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd){:target="_blank"}
 - Once installed, open the application.
 
 Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:
@@ -172,15 +172,15 @@ In the previous sections we have seen how to connect to the database using OEM a
 
 We will not see these methods in this course but if you are interested to try them, you have to install some SW first.
 
-If you just want to try SQL\*Plus, you can get it from [Oracle Instant Client download page](https://www.oracle.com/database/technologies/instant-client/downloads.html). Just select your platform, and the following screen, the SQL\*Plus Package.
+If you just want to try SQL\*Plus, you can get it from [Oracle Instant Client download page](https://www.oracle.com/database/technologies/instant-client/downloads.html){:target="_blank"}. Just select your platform, and the following screen, the SQL\*Plus Package.
 
-Once installed connect using the information in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/04/sqlplus-desde-cliente.html).
+Once installed connect using the information in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/04/sqlplus-desde-cliente.html){:target="_blank"}.
 
 To make the TNS connection you have to first create the tns file with all the information needed. To create that file you can use the "Net Configuration Assistant". To get it you have to 
 
-- Go to the [Oracle Database Software Donwloads](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html).
+- Go to the [Oracle Database Software Donwloads](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html){:target="_blank"}.
 - Select your version and platform and click on "See all" on the right.
 - There you find the "Oracle Database XX client"
 - Download and install it following the  instructions provided.
 
-Once installed you have how to create the TNS connection in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html).
+Once installed you have how to create the TNS connection in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html){:target="_blank"}.

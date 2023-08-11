@@ -5,7 +5,7 @@ title:  "Windows Server in Azure"
 
 In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.
 
-First, we have to access the [Azure Portal](https://portal.azure.com/) using our Azure for Students Account.
+First, we have to access the [Azure Portal](https://portal.azure.com/){:target="_blank"} using our Azure for Students Account.
 
 In the next images we will display with a red square the options that have to be changed or revised. You can forget about the rest of available options.
 
@@ -103,7 +103,7 @@ You can use Microsoft Remote Desktop in Windows and Mac.
 
 As in KRDC we can have share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).
 
-Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/) or for Mac in the [App Store](https://www.apple.com/es/app-store/).
+Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/){:target="_blank"} or for Mac in the [App Store](https://www.apple.com/es/app-store/){:target="_blank"}.
 
 Yo can quicky connect to the VM downloading the RDP file from azure and them make doble click on it.
 

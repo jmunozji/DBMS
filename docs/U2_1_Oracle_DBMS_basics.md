@@ -1,11 +1,11 @@
 ---
-title:  "Unit 2. Oracle DBMS basics."
+title:  "Oracle DBMS basics"
 ---
-# Oracle installation and configuration.
+# Oracle DBMS basics.
 
 ![OracleIntroduction](assets/Oracle_DBMS_basics/T8_0.png)
 
-# Objectives
+## Objectives
 
 Last year in Database Management module, Databases have been designed, translated into the Relational Model, and implemented either in Access or in Oracle. Access to the Database has also been made through the SQL language, both to retrieve information or modify it, and to create the Database itself (the tables).
 
@@ -19,7 +19,7 @@ The objective of this unit will be to install and configure a large Database, su
 - Organize the physical space where the data is stored.
 - Manage the objects directly.
 
-# Functions of the Database Administrator (DBA)
+## Functions of the Database Administrator (DBA)
 
 The Database Administrator (DBA: DataBase Administrator) is the person responsible for the proper functioning of the Database, its installation, and correct operation. Among their functions we can find:
 
@@ -33,7 +33,7 @@ The Database Administrator (DBA: DataBase Administrator) is the person responsib
 
 We will see each of these functions throughout the unit, first with a short general description and then specific to Oracle. Even if any of these functions can be done in more than one way, we will try to see them all.
 
-# Oracle DBMS estructure
+## Oracle DBMS estructure
 
 Before exploring the functions of the Administrator in Oracle, it is convenient to know a little about its structure, how it is organized, to be aware of what we are doing.
 

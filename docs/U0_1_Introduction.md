@@ -1,5 +1,5 @@
 ---
-title:  "Unit 0. Introduction."
+title:  "Introduction"
 ---
 
 # Introduction
@@ -33,7 +33,7 @@ In any case you are going to need a Windows Server to install the Oracle 11g DBM
 Depending on your PC operating system and the availability of the client programs for it, you can decide to install the client programs in your own PC or create a client VM to install these programs. Therefore we will need:
 
 - Windows Server 2008 or higher
-- Windows 7 or higher as client (optiona)
+- Windows 7 or higher as client (optional)
 
 ## VM's in VirtualBox
 
@@ -42,7 +42,7 @@ At this point you might know quite well how to work with VirtualBox. If you deci
 - Windows Server 2008
 - Windows 7 (optional as client)
 
-You can find the .ova files [here](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=Dev4Br).
+You can find the .ova files [here](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Ep5R9IIvqjpGiz0FmLGjPWkBRnE9Kb8PAeiOVoqrlTzd1A){:target="_blank"}.
 
 Create both machines, configure them with "bridged network" and create a shared folder with your host machine to easily change files between them.
 

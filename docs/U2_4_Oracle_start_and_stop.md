@@ -1,17 +1,20 @@
 ---
-title:  "Unit 2. Start and stop Oracle. Basic administration"
+title:  "Start and stop Oracle. Basic administration"
 ---
+
+# Start and stop Oracle. Basic administration
+
 Usually the booting of all DBMS is automatic. When the Operating System starts, it starts the Database Engine. The stop is also automatic. In any case, it is convenient to know the usual steps to start and stop it.
 
 We will also take the opportunity to see other things that can be done with the Instance Manager, such as changing parameters, managing sessions connected to the Database, etc.
 
-# Start and stop with Oracle Enterprise Manager OEM - Instance Manager
+## Start and stop with Oracle Enterprise Manager OEM - Instance Manager
 
 We have to enter OEM as user **SYS**, and connecting as SYSDBA.
 
 ![StartStop](assets/Oracle_start_stop/1.png)
 
-## Stop de database
+### Stop de database
 
 In the "Home" tab choose "Shutdown". 
 
@@ -43,7 +46,7 @@ After a while (don't try it immediately) press `Refresh` and go back to the main
 
 ![StartStop](assets/Oracle_start_stop/7.png)
 
-## Start the database
+### Start the database
 
 The steps that Oracle actually needs to boot are 3:
 
@@ -87,7 +90,7 @@ And we have our database opened again.
 
 ![StartStop](assets/Oracle_start_stop/12.png)
 
-# Information and parameters
+## Information and parameters
 
 Appart from starting and stopping the database there are other basic administration tasks that de DBA administrator has to do complete.
 
@@ -109,7 +112,7 @@ And another one for the PGA.
 
 Dedicate some time to see the different options in this screens and how you should make changes to the allocated memory for SGA and PGA.
 
-## Initialization parameters
+### Initialization parameters
 
 Initialization parameters can also be viewed. Go to "Server" and then to "Initialization Parameters".
 
@@ -150,7 +153,7 @@ Notice how after closing this session, nothing can be done from the SYSTEM sessi
 ![StartStop](assets/Oracle_start_stop/22.png)
 
 
-# LINE MODE (SYS user)
+## LINE MODE (SYS user)
 
 Just in case we do not have access to OEM, it could be a good idea to learn how to make all these basic actions from a command line program, such as SQL*PLUS.
 
@@ -158,7 +161,7 @@ First, log in as SYSDBA.
 
 ![StartStop](assets/Oracle_start_stop/23.png)
 
-## Shutdown
+### Shutdown
 
 Give the SHUTDOWN command.
 
@@ -166,7 +169,7 @@ The parameters can be set: NORMAL (default), TRANSACTIONAL, IMMEDIATE or ABORT.
 
 ![StartStop](assets/Oracle_start_stop/24.png)
 
-## Start
+### Start
 
 Give the STARTUP command. If we wanted to start in three steps:
 
@@ -183,7 +186,7 @@ ALTER DATABASE OPEN;
 
 ![StartStop](assets/Oracle_start_stop/26.png)
 
-## Initialized parameters
+### Initialized parameters
 
 To be able to see the list of initialized parameters, we will issue the SHOW PARAMETERS command.
 
@@ -191,7 +194,7 @@ If we want to modify a parameter without stopping the database, we will have to 
 
 If we want to modify any parameter, the simplest and most foolproof way is the one mentioned before: modify an INIT.ORA file, stop the instance and start it again.
 
-## Sessions
+### Sessions
 To control the sessions, more specifically, to terminate them, it would be done by means of the ALTER SYSTEM KILL SESSION command, followed by the session number. We can find this out by consulting a view called V$SESSION, accessible only to administrators (for example SYS):
 
 ![StartStop](assets/Oracle_start_stop/27.png)

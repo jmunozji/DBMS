@@ -1,13 +1,13 @@
 ---
-title:  "Unit 2. Oracle installation."
+title:  "Oracle installation"
 ---
-# Installation of the DBMS
+# Oracle installation.
 
 The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.
 
 We could also include in this section the installation of different help tools both on the server and on the clients (as they could be in the case of Oracle Developer, to build applications with forms and reports).
 
-## Server installation
+## Oracle Server installation
 
 > We are going to work with **Oracle 11g**, an old version of the DBMS, as in the moment of writing these notes[^1], the latest long term release is 19c and the innovation release is 21c. 
 > 
@@ -20,7 +20,7 @@ Before we start we will need
 - Windows Server (64 bits) OS (2008 or higher)
 - Oracle 11g Server for Windows
 
-You can download a VirtualBox .ova virtual machine and the Oracle 11g Server [here.](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=OI7f1l)
+You can download a VirtualBox .ova virtual machine and the Oracle 11g Server [here.](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Ep5R9IIvqjpGiz0FmLGjPWkBRnE9Kb8PAeiOVoqrlTzd1A){:target="_blank"}
 
 When we start the machine it should look similar the following image.
 
@@ -93,13 +93,13 @@ We press "Accept" and we will have finished the installation.
 
 In earlier versions of Oracle the main tool to manage it was a program called *Enterprise Manager Database Control*. In Oracle 11g it is no longer an application but we can access this tool as a web page and it is called *Oracle Enterprise Manager 11g*. In this last screen we see the url that we must put in the browser to be able to manage the created database (orcl).
 
-The address is: https://localhost:1158/em
+The address is: [https://localhost:1158/em](https://localhost:1158/em){:target="_blank"}
 
 ![Clean machine](assets/Oracle_installation/17.png)
 
 We will get into this tool in the next section.
 
-> *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896).
+> *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896){:target="_blank"}.
 
 ### After the installation
 
@@ -164,15 +164,15 @@ Just remember that if you try to log in as System you do it as a normal user but
 
 ![Connectassysdba](assets/Oracle_installation/connectassysdba.png)
 
-## SQL Developer
+### SQL Developer
 
 We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and later install it on a different machine.
 
-First, we have to download the last version from oracle web page. We can find it [here](https://www.oracle.com/database/sqldeveloper/).
+First, we have to download the last version from oracle web page. We can find it [here](https://www.oracle.com/database/sqldeveloper/){:target="_blank"}.
 
 We select the "Windows 64-bit with JDK 11 included" as it has the necessary Java version included.
 
-In our server we open the download page and we get the install program. We need an Oracle account. You can also get it [here](https://gvaedu-my.sharepoint.com/:u:/g/personal/j_munozjimeno_edu_gva_es/EW7zaEInRcVOsssCFIKMNF4B2DkhCYH4QKfy0vo1G24GoA?e=79DWXN), even though it might not be the last available version.
+In our server we open the download page and we get the install program. We need an Oracle account. You can also get it [here](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Ep5R9IIvqjpGiz0FmLGjPWkBRnE9Kb8PAeiOVoqrlTzd1A){:target="_blank"}, even though it might not be the last available version.
 
 ![SQLDeveloper](assets/Oracle_installation/SQLDeveloper01.png)
 
@@ -182,7 +182,7 @@ You can put it in ""C:\Program Files\Oracle\sqldeveloper" and create a shortcut 
 
 To connect to the server just double click on the .exe file or the created shortcut. 
 
-> If you are on a Windows 2008 Server you might get an "*API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL*" error. To solve it just download and install Visual C++ for Windows. You can find it [here](https://www.microsoft.com/es-es/download/details.aspx?id=48145).
+> If you are on a Windows 2008 Server you might get an "*API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL*" error. To solve it just download and install Visual C++ for Windows. You can find it [here](https://www.microsoft.com/es-es/download/details.aspx?id=48145){:target="_blank"}.
 
 When it opens you will see this.
 

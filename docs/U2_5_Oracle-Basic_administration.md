@@ -1,13 +1,15 @@
 ---
-title:  "Unit 2. Oracle other basic administration tasks."
+title:  "Oracle other basic administration tasks"
 ---
+# Oracle other basic administration tasks
+
 In this section we are going to see other basic administration tasks, such as:
 
 - Data dictionary structure
 - Space administration
 - Object direct management
 
-# Data dictionary structure
+## Data dictionary structure
 
 The data dictionary, as we defined it before, contains among other things the structure of the tables. It actually contains much more information, about users, connections, statistics, etc. 
 
@@ -22,7 +24,7 @@ Types of views (identifiable by how they start):
 | DBA | Returns a complete list of objects in the Database (Administrators only) | |
 | V$ | Dynamic performance views (continuously updated by Oracle). They provide information about performance, file status, and memory used by Oracle. |
 
-So for example, if we entered as user SCOTT, with USER_TABLES we will have all the tables created by him. With ALL_TABLES we will have all the accessible tables (our own and others to which he has permission). With DBA_TABLES we will not access anything because the SCOTT user does not have Administrator permissions. But the SYS user, with DBA_TABLES would see all the tables in the gatabase.
+So for example, if we entered as user SCOTT, with USER_TABLES we will have all the tables created by him. With ALL_TABLES we will have all the accessible tables (our own and others to which he has permission). With DBA_TABLES we will not access anything because the SCOTT user does not have Administrator permissions. But the SYS user, with DBA_TABLES would see all the tables in the database.
 
 Here are some of the most useful views we can query:
 
@@ -51,7 +53,7 @@ Here are some of the most useful views we can query:
 |                   |                   |                   | DUAL                 | Dummy table, used in some SQL statements.               |
 |                   |                   |                   | V$SESSION            | Information about connected sessions                    |
 
-# Space management
+## Space administration
 
 One of the DBA's tasks will be to reserve enough disk space for the system to work well and for users to be able to save their data without problems. Too much space should not be reserved, as it would be a waste of resources, but we cannot be short.
 
@@ -67,7 +69,7 @@ Thus, according to needs, we can:
 
 The latter can even be done automatically: when space is needed, the file is expanded.
 
-## OEM - Storage Manager
+### OEM - Storage Manager
 
 In Oracle Enterprise Manager we can see the existing TableSpaces and their linked datafiles. We can also modify them or create new ones.
 
@@ -103,7 +105,7 @@ Managing rollback segments (RollBack Segments) may be beyond the scope of this c
 
 The management of Redo Logs and Archive Logs is also a bit beyond the level of this course, and in addition some explanations are still missing to understand these files.
 
-## Command line mode
+### Command line mode
 
 The statements to modify TableSpaces are CREATE, ALTER and DROP TABLESPACE. For example if we want to create a TableSpace called TS1, with a data file called 'TS101.ORA' of 2 Mb that autoincrements by 1 Mb. when a maximum of 10 Mb is needed:
 
@@ -116,7 +118,7 @@ To add a file to an already existing TableSpace we would use the statement:
 
 with the same structure as the previous one.
 
-## Guided practice - How to create a tablespace
+### Guided practice - How to create a tablespace
 
 In this guided practice we are going to create a new tablespace, with a datafile that must keep getting bigger as it fills up to a maximum size.
 
@@ -151,7 +153,7 @@ We get our new tablespace in the list of tablespaces.
 
 ![Create tablespace](assets/Oracle_Basic_administration/guidedpractice6.png)
 
-# Object direct management
+## Object direct management
 
 There will be occasions when the DBA will have to directly manipulate objects, not only their own, but any user. You will need to create tables, copy them, create views, create accesses, give permissions, etc. This will require the direct management of objects (tables, views, synonyms, ...).
 
@@ -179,7 +181,7 @@ We see the rows of the selected table, as well as the SQL associated with the ac
 
 ![Create tablespace](assets/Oracle_Basic_administration/directmanagement5.png)
 
-## Create a sequence
+### Create a sequence
 
 From the Enterprise Manager, go to `Scheme -> Database Objects -> Sequences`.
 

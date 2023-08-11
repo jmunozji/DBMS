@@ -5,7 +5,7 @@ title:  "Windows Server in AWSAcademy"
 
 In this note we will see how to create a Windows Server. We will use that machine to install our Oracle Database afterwards.
 
-First, we have to access the [AWS Academy portal](https://www.awsacademy.com/vforcesite/LMS_Login) using our AWS Academy Account.
+First, we have to access the [AWS Academy portal](https://www.awsacademy.com/vforcesite/LMS_Login){:target="_blank"} using our AWS Academy Account.
 
 In the next images we will display with a red square the options that have to be changed or revised. You can forget about the rest of available options.
 
@@ -129,7 +129,7 @@ You can use Microsoft Remote Desktop in Windows and Mac.
 
 As in KRDC we can have share folders between our computer and the Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).
 
-Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/) or for Mac in the [App Store](https://www.apple.com/es/app-store/).
+Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/){:target="_blank"} or for Mac in the [App Store](https://www.apple.com/es/app-store/){:target="_blank"}.
 
 We can now "Download remote desktop file" to quickly access de Server.
 Just download the RDP file from AWS and them make double click on it.

@@ -21,7 +21,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Cambiar a modo claro
-  language: es
+  language: en
   features:
     #- navigation.sections
     - navigation.top
@@ -55,11 +55,25 @@ markdown_extensions:
   
 plugins: 
   - search:
-      lang: es
-
+      lang: en
 
 extra_css:
   - stylesheets/extra.css
+
+nav:
+    - Eng:
+      - Unit 0:
+        - U0_1_Introduction.md
+        - U0_2_Windows_Server_in_Azure.md
+        - U0_3_Windows_Server_in_AWSAcademy.md
+      - Unit 1:
+        - U1_1_Introduction_to_DBMS.md
+      - Unit 2:
+        - U2_1_Oracle_DBMS_basics.md
+        - U2_2_Oracle_installation.md
+        - U2_3_Oracle_connection.md
+        - U2_4_Oracle_start_and_stop.md
+        - U2_5_Oracle-Basic_administration.md  
 
 extra:
   analytics: 
