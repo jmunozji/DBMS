@@ -1,20 +1,11 @@
 ---
 title:  "Unit 1. Introduction to DBMS."
 ---
-
-# Unit 1. Introduction to DMBS. <!-- omit from toc --> 
-
-- [Functions of the database management system (DBMS).](#functions-of-the-database-management-system-dbms)
-- [Components.](#components)
-- [Types.](#types)
-- [DBMS Architecture.](#dbms-architecture)
-- [ANSI/SPARC architecture of a DBMS.](#ansisparc-architecture-of-a-dbms)
-- [References](#references)
-
+# Introduction to DMBS.
 
 Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.
 
-## Functions of the database management system (DBMS).
+# Functions of the database management system (DBMS).
 
 The functions of the database management system (DBMS) are as follows:
 
@@ -26,7 +17,7 @@ The functions of the database management system (DBMS) are as follows:
 
 - **Security control**: The DBMS is responsible for ensuring that the data in the database is protected against unauthorized access. This includes user authentication, authorization of database access, and implementation of security policies.
 
-## Components.
+# Components.
 
 We could summarize the components of a DBMS are as follows:
 
@@ -38,7 +29,7 @@ We could summarize the components of a DBMS are as follows:
 
 - **Administration tools**: Allow database administrators to manage the database and perform tasks such as creating and modifying tables, assigning user permissions, performing backups, etc.
 
-## Types.
+# Types.
 
 There are different types of DBMS, among which are:
 
@@ -50,7 +41,7 @@ There are different types of DBMS, among which are:
 
 - Cloud DBMS: Are DBMS that run in the cloud and are accessible over the Internet. Examples of cloud DBMS are Amazon RDS, Microsoft Azure SQL Database, Google Cloud SQL, etc.
 
-## DBMS Architecture.
+# DBMS Architecture.
 
 We could also make a classification of DBMS according to the number of layers between the user and the database. There are three types of DBMS (Database Management System):
 
@@ -66,7 +57,7 @@ We could also make a classification of DBMS according to the number of layers be
 
 ![3layer](https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/5.png)
 
-## ANSI/SPARC architecture of a DBMS.
+# ANSI/SPARC architecture of a DBMS.
 
 The **ANSI/SPARC architecture** of a DBMS stands for the *American National Standards Institute/Standards Planning And Requirements Committee* architecture of a Database Management System. It is a conceptual framework for designing and developing database management systems that was proposed by the ANSI in the 1970s.
 
