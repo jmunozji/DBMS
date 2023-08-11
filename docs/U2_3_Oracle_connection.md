@@ -86,7 +86,7 @@ We saw when we installed the server how to install the SQL Developer. Just remem
 
 - Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/){:target="_blank"}.
 - Follow the installation instructions in that page.
-  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here].(https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd){:target="_blank"}
+  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here](https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd){:target="_blank"}
 - Once installed, open the application.
 
 Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:
