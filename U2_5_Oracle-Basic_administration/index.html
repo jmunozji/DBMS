@@ -1,0 +1,982 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../U2_4_Oracle_start_and_stop/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Oracle other basic administration tasks - DBMS - Database Management Systems</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-3NX5MD5C8H"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-3NX5MD5C8H",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-3NX5MD5C8H",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oracle-other-basic-administration-tasks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DBMS - Database Management Systems" class="md-header__button md-logo" aria-label="DBMS - Database Management Systems" data-md-component="logo">
+      
+  <img src="../assets/logocaminas.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DBMS - Database Management Systems
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Oracle other basic administration tasks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DBMS - Database Management Systems" class="md-nav__button md-logo" aria-label="DBMS - Database Management Systems" data-md-component="logo">
+      
+  <img src="../assets/logocaminas.png" alt="logo">
+
+    </a>
+    DBMS - Database Management Systems
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Eng
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Eng
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+          Unit 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_1_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_2_Windows_Server_in_Azure/" class="md-nav__link">
+        Windows Server in Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_3_Windows_Server_in_AWSAcademy/" class="md-nav__link">
+        Windows Server in AWSAcademy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          Unit 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U1_1_Introduction_to_DBMS/" class="md-nav__link">
+        Introduction to DBMS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Unit 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_1_Oracle_DBMS_basics/" class="md-nav__link">
+        Oracle DBMS basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_2_Oracle_installation/" class="md-nav__link">
+        Oracle installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_3_Oracle_connection/" class="md-nav__link">
+        Oracle connection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_4_Oracle_start_and_stop/" class="md-nav__link">
+        Start and stop Oracle. Basic administration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Oracle other basic administration tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Oracle other basic administration tasks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-dictionary-structure" class="md-nav__link">
+    Data dictionary structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#space-administration" class="md-nav__link">
+    Space administration
+  </a>
+  
+    <nav class="md-nav" aria-label="Space administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oem-storage-manager" class="md-nav__link">
+    OEM - Storage Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablespaces" class="md-nav__link">
+    TableSpaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datafiles" class="md-nav__link">
+    Datafiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-mode" class="md-nav__link">
+    Command line mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guided-practice-how-to-create-a-tablespace" class="md-nav__link">
+    Guided practice - How to create a tablespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-direct-management" class="md-nav__link">
+    Object direct management
+  </a>
+  
+    <nav class="md-nav" aria-label="Object direct management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-sequence" class="md-nav__link">
+    Create a sequence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="oracle-other-basic-administration-tasks">Oracle other basic administration tasks</h1>
+<p>In this section we are going to see other basic administration tasks, such as:</p>
+<ul>
+<li>Data dictionary structure</li>
+<li>Space administration</li>
+<li>Object direct management</li>
+</ul>
+<h2 id="data-dictionary-structure">Data dictionary structure</h2>
+<p>The data dictionary, as we defined it before, contains among other things the structure of the tables. It actually contains much more information, about users, connections, statistics, etc. </p>
+<p>They are, in short, a set of tables belonging to SYS user, which contain the structure of all the tables in the database, the views, synonyms, etc. These tables can have a very strange internal structure. Therefore, what is actually used are a series of views, which present the information to us in a more useful way. The complete list of data dictionary views can be consulted in the DICT (dictionary) view, but since there are more than 1200, let's sort them out a bit, and comment on some of them.</p>
+<p>Types of views (identifiable by how they start):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">They start with</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ALL</td>
+<td style="text-align: left;">Returns information about all objects accessible by the user</td>
+</tr>
+<tr>
+<td style="text-align: center;">USER</td>
+<td style="text-align: left;">Returns information about all objects owned by the user</td>
+</tr>
+<tr>
+<td style="text-align: center;">DBA</td>
+<td style="text-align: left;">Returns a complete list of objects in the Database (Administrators only)</td>
+</tr>
+<tr>
+<td style="text-align: center;">V$</td>
+<td style="text-align: left;">Dynamic performance views (continuously updated by Oracle). They provide information about performance, file status, and memory used by Oracle.</td>
+</tr>
+</tbody>
+</table>
+<p>So for example, if we entered as user SCOTT, with USER_TABLES we will have all the tables created by him. With ALL_TABLES we will have all the accessible tables (our own and others to which he has permission). With DBA_TABLES we will not access anything because the SCOTT user does not have Administrator permissions. But the SYS user, with DBA_TABLES would see all the tables in the database.</p>
+<p>Here are some of the most useful views we can query:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Prefix</th>
+<th></th>
+<th>Remainder of the name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td style="text-align: center;">DBA</td>
+<td></td>
+<td>_DATA_FILES</td>
+<td>Information about the physical files of the B.D. (those of TableSpaces)</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_DB_LINKS</td>
+<td>Links with other B.D.</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_FREE_SPACE</td>
+<td>Free space in the TableSpaces (one row for each free fragment)</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TABLES</td>
+<td>Tables</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TAB_COLUMNS</td>
+<td>Columns of all tables</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_INDEXES</td>
+<td>Index (including primary keys) of all tables</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_IND_COLUMNS</td>
+<td>Columns that form the index</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_OBJECTS</td>
+<td>Objects (tables, views, synonyms, procedures, triggers, ...)</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TRIGGERS</td>
+<td>Triggers</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_CONSTRAINTS</td>
+<td>Constraints for all tables</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_VIEWS</td>
+<td>Views, including the SQL statement that forms the view</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_SYNONYMS</td>
+<td>All synonyms for tables, views, procedures, ...</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TABLESPACES</td>
+<td>Description of all tablespaces</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TAB_PRIVS</td>
+<td>Privileges on all objects</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_TS_QUOTAS</td>
+<td>User quotas on Tablespaces</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_USERS</td>
+<td>Information about users</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_CATALOG</td>
+<td>Tables, views, synonyms. It is a subset of _OBJECTS</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td>CAT</td>
+<td>Synonym for USER_CATALOG</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td>DICT</td>
+<td>All data dictionary views</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td style="text-align: center;">DBA</td>
+<td>USER</td>
+<td>_ERRORS</td>
+<td>Errors occurred during the compilation of a procedure. More comfortable SHOW ERRORS</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td>DUAL</td>
+<td>Dummy table, used in some SQL statements.</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td>V$SESSION</td>
+<td>Information about connected sessions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="space-administration">Space administration</h2>
+<p>One of the DBA's tasks will be to reserve enough disk space for the system to work well and for users to be able to save their data without problems. Too much space should not be reserved, as it would be a waste of resources, but we cannot be short.</p>
+<p>In Oracle, everything is stored in TableSpaces, which literally means space for tables, each of which consists of one or more physical files. These files are saved, by default, in <code>C:\app\Administrador\oradata\orcl</code> if ORCL is the instance name and 'Administrador' the OS user.</p>
+<p>The most logical thing, apart from the TableSpaces already created by default, is to divide them by large blocks of users, if we have many, assigning each group of users to a TableSpace.</p>
+<p>Thus, according to needs, we can:</p>
+<ul>
+<li>Create new TableSpaces by assigning them new files of certain sizes.</li>
+<li>In the existing TableSpaces we could add new files.</li>
+<li>Expand existing files.</li>
+</ul>
+<p>The latter can even be done automatically: when space is needed, the file is expanded.</p>
+<h3 id="oem-storage-manager">OEM - Storage Manager</h3>
+<p>In Oracle Enterprise Manager we can see the existing TableSpaces and their linked datafiles. We can also modify them or create new ones.</p>
+<p>We access OEM as SYSTEM and we look form "Server" tab to access "Tablespaces".</p>
+<p>It will serve us to manage the TableSpaces, the DataFiles, the Rollback Segments (place where the updates that are made are saved, in case there is a rollback), the transaction logs or REDO files (which are used to recover the B.D., as we will see later) and the Archive Logs (copies of the previous ones, and which we will also discuss later).</p>
+<p><img alt="basicadmin" src="../assets/Oracle_Basic_administration/basicadmin01.png" /></p>
+<h3 id="tablespaces">TableSpaces</h3>
+<p>We will be able to create, modify and delete TableSpaces, in addition to seeing the use of each one. We can add data files (DataFile) to TableSpaces, modify or delete them. We can make it active (online) or not (offline).</p>
+<p>First we click on "TableSpaces".</p>
+<p><img alt="basicadmin" src="../assets/Oracle_Basic_administration/basicadmin02.png" /></p>
+<p>We can see all existing TableSpaces, along with the reserved disk size (Allocated Size), the used space in MB and %, if it will autoexpand or not, etc.</p>
+<p><img alt="basicadmin" src="../assets/Oracle_Basic_administration/basicadmin03.png" /></p>
+<h3 id="datafiles">Datafiles</h3>
+<p>They are always associated with a TableSpace. They are the files we can find in the OS. In this image we can see the files for the previous TableSpaces. See that they are the files with .DBF extension</p>
+<p><img alt="basicadmin" src="../assets/Oracle_Basic_administration/basicadmin04.png" /></p>
+<p>We can also select a TableSpace and clic on <code>View</code> button to see all its information. Among other things we can see the DataFiles associated to that TableSpace.</p>
+<p><img alt="basicadmin" src="../assets/Oracle_Basic_administration/basicadmin05.png" /></p>
+<p>Managing rollback segments (RollBack Segments) may be beyond the scope of this course. We will simply know that there are a few segments of these and that the system uses them to be able to guarantee rollbacks.</p>
+<p>The management of Redo Logs and Archive Logs is also a bit beyond the level of this course, and in addition some explanations are still missing to understand these files.</p>
+<h3 id="command-line-mode">Command line mode</h3>
+<p>The statements to modify TableSpaces are CREATE, ALTER and DROP TABLESPACE. For example if we want to create a TableSpace called TS1, with a data file called 'TS101.ORA' of 2 Mb that autoincrements by 1 Mb. when a maximum of 10 Mb is needed:</p>
+<p><code>CREATE TABLESPACE ts1
+DATAFILE 'ts101.ora' SIZE 2M AUTOEXTEND ON NEXT 1M MAXSIZE 10M;</code></p>
+<p>To add a file to an already existing TableSpace we would use the statement:</p>
+<p><code>ALTER TABLESPACE ... ADD DATAFILE;</code></p>
+<p>with the same structure as the previous one.</p>
+<h3 id="guided-practice-how-to-create-a-tablespace">Guided practice - How to create a tablespace</h3>
+<p>In this guided practice we are going to create a new tablespace, with a datafile that must keep getting bigger as it fills up to a maximum size.</p>
+<p>From the Enterprise Manager we go to <code>Server -&gt; Storage -&gt; Tablespaces</code>.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice1.png" /></p>
+<p>By default, the existing tablespaces appear. Press the `Create' button to start the process of creating a new tablespace.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice2.png" /></p>
+<p>We write the number of the new tablespace <code>TS1</code>. We leave the rest of the options by default. We press the ``Add'' button to create a new file associated with the tablespace.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice3.png" /></p>
+<p>We select the following options:
+* File number: <code>TS1</code>.
+* File size: <code>1MB</code>.
+* We mark the check box <code>Automatically expand ...'</code>
+* Increase: <code>512KB</code>.
+* Maximum file size: <code>5MB</code>.</p>
+<p>Press the ``Continue'' button.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice4.png" /></p>
+<p>We press the ``Accept'' button so that the modifications on the file become effective.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice5.png" /></p>
+<p>We get our new tablespace in the list of tablespaces.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/guidedpractice6.png" /></p>
+<h2 id="object-direct-management">Object direct management</h2>
+<p>There will be occasions when the DBA will have to directly manipulate objects, not only their own, but any user. You will need to create tables, copy them, create views, create accesses, give permissions, etc. This will require the direct management of objects (tables, views, synonyms, ...).</p>
+<p>There will be occasions when the DBA will have to directly manipulate objects, not only their own, but any user's. You will need to create tables, copy them, create views, create accesses, give permissions, etc. This will require the direct management of objects (tables, views, synonyms, ...).</p>
+<p>Let's see how to manage tables for user Scott using OEM.</p>
+<p>From the Enterprise Manager we go to ``Scheme -&gt; Database Objects -&gt; Tables''.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement1.png" /></p>
+<p>To see the tables of the 'scott' scheme, enter the number and give it to the <code>Go</code> button. In this way we obtain the list with the tables.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement2.png" /></p>
+<p>We select the <code>DEPT</code> table and press the <code>View</code> button.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement3.png" /></p>
+<p>Now we can choose the <code>View Data</code> option in the <code>Actions</code> dropdown menu. We must press the <code>Go</code> button.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement4.png" /></p>
+<p>We see the rows of the selected table, as well as the SQL associated with the action we just performed.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement5.png" /></p>
+<h3 id="create-a-sequence">Create a sequence</h3>
+<p>From the Enterprise Manager, go to <code>Scheme -&gt; Database Objects -&gt; Sequences</code>.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement6.png" /></p>
+<p>We select the scheme <code>scott</code> and press <code>Go</code>.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement7.png" /></p>
+<p>Then we press on <code>Create</code>button to create a new Sequence. We give the new sequence the name <code>S1</code>.</p>
+<p>We set the maximum value as unlimited.</p>
+<p>We choose <code>Show SQL</code> to see the code that is going to be executed.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement8.png" /></p>
+<p>We press <code>Back</code>.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement9.png" /></p>
+<p>We press <code>Accept</code>.</p>
+<p><img alt="Create tablespace" src="../assets/Oracle_Basic_administration/directmanagement10.png" /></p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jmunozji" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ppmunozj" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,823 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../U2_1_Oracle_DBMS_basics/">
+      
+      
+        <link rel="next" href="../U2_3_Oracle_connection/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Oracle installation - DBMS - Database Management Systems</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-3NX5MD5C8H"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-3NX5MD5C8H",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-3NX5MD5C8H",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oracle-installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DBMS - Database Management Systems" class="md-header__button md-logo" aria-label="DBMS - Database Management Systems" data-md-component="logo">
+      
+  <img src="../assets/logocaminas.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DBMS - Database Management Systems
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Oracle installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DBMS - Database Management Systems" class="md-nav__button md-logo" aria-label="DBMS - Database Management Systems" data-md-component="logo">
+      
+  <img src="../assets/logocaminas.png" alt="logo">
+
+    </a>
+    DBMS - Database Management Systems
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Eng
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Eng
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+          Unit 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_1_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_2_Windows_Server_in_Azure/" class="md-nav__link">
+        Windows Server in Azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U0_3_Windows_Server_in_AWSAcademy/" class="md-nav__link">
+        Windows Server in AWSAcademy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          Unit 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U1_1_Introduction_to_DBMS/" class="md-nav__link">
+        Introduction to DBMS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Unit 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Unit 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_1_Oracle_DBMS_basics/" class="md-nav__link">
+        Oracle DBMS basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Oracle installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Oracle installation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-server-installation" class="md-nav__link">
+    Oracle Server installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Oracle Server installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#after-the-installation" class="md-nav__link">
+    After the installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    Users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-to-manage-the-dbms" class="md-nav__link">
+    Tools to manage the DBMS
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools to manage the DBMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-mode" class="md-nav__link">
+    Command Line Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oem-oracle-enterprise-manager" class="md-nav__link">
+    OEM - Oracle Enterprise Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-developer" class="md-nav__link">
+    SQL Developer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_3_Oracle_connection/" class="md-nav__link">
+        Oracle connection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_4_Oracle_start_and_stop/" class="md-nav__link">
+        Start and stop Oracle. Basic administration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../U2_5_Oracle-Basic_administration/" class="md-nav__link">
+        Oracle other basic administration tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="oracle-installation">Oracle installation.</h1>
+<p>The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.</p>
+<p>We could also include in this section the installation of different help tools both on the server and on the clients (as they could be in the case of Oracle Developer, to build applications with forms and reports).</p>
+<h2 id="oracle-server-installation">Oracle Server installation</h2>
+<blockquote>
+<p>We are going to work with <strong>Oracle 11g</strong>, an old version of the DBMS, as in the moment of writing these notes<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the latest long term release is 19c and the innovation release is 21c. </p>
+<p>The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.</p>
+</blockquote>
+<p>Before we start we will need </p>
+<ul>
+<li>Windows Server (64 bits) OS (2008 or higher)</li>
+<li>Oracle 11g Server for Windows</li>
+</ul>
+<p>You can download a VirtualBox .ova virtual machine and the Oracle 11g Server <a href="https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Ep5R9IIvqjpGiz0FmLGjPWkBRnE9Kb8PAeiOVoqrlTzd1A" target="_blank">here.</a></p>
+<p>When we start the machine it should look similar the following image.</p>
+<p><img alt="Clean Machine" src="../assets/Oracle_installation/1.png" /></p>
+<p>Next you have to download the .zip file with Oracle Database 11g Release 2. Unzip it on the Desktop so that it looks like this:</p>
+<p><img alt="Clean Machine" src="../assets/Oracle_installation/2.png" /></p>
+<p>Launch the setup.exe file to begin the installation.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/3.png" /></p>
+<p>Do not provide any data on this screen and ignore the warning message.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/4.png" /></p>
+<p>Select the first option so that after installing the Oracle software a database is configured.</p>
+<p><img alt="Clean Machine" src="../assets/Oracle_installation/5.png" /></p>
+<p>Choose the "Desktop Class" option since we are not going to work in production.</p>
+<p><img alt="Clean Machine" src="../assets/Oracle_installation/6.png" /></p>
+<p>At this point the only thing we are going to fill in is the "Global Database Name". Fill it with "orcl.w2008". As Administrator password and its confirmation use "system".</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/7.png" /></p>
+<p>Ignore the warning message and proceed with the installation.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/8.png" /></p>
+<p>This informative screen helps us check that the installation options are correct. Click "Finish" to begin the installation process.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/9.png" /></p>
+<p>At this point the installation process begins...</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/10.png" /></p>
+<p>When finished, the "Database Configuration Wizard" creates the instance that we had previously configured.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/11.png" /></p>
+<p>When the wizard finishes, we press "Password Management..." to edit and unlock a few users.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/12.png" /></p>
+<p>We change the password of the user "SYS" and of the user "SYSTEM". In both cases we use "system" as the password.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/13.png" /></p>
+<p>We unlock the user "SCOTT" and the user "HR".</p>
+<ul>
+<li>SCOTT: password "tiger".</li>
+<li>HR: password "hr".</li>
+</ul>
+<p><img alt="Clean Machine" src="../assets/Oracle_installation/14.png" /></p>
+<p>We ignore the warning about password strength.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/15.png" /></p>
+<p>Take note of all the information provided in this screen, as you will need it later. The SID (System IDentifyer) is orcl and wi will later need it to connect to the database.</p>
+<p>We press "Accept" and we will have finished the installation.</p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/16.png" /></p>
+<p>In earlier versions of Oracle the main tool to manage it was a program called <em>Enterprise Manager Database Control</em>. In Oracle 11g it is no longer an application but we can access this tool as a web page and it is called <em>Oracle Enterprise Manager 11g</em>. In this last screen we see the url that we must put in the browser to be able to manage the created database (orcl).</p>
+<p>The address is: <a href="https://localhost:1158/em" target="_blank">https://localhost:1158/em</a></p>
+<p><img alt="Clean machine" src="../assets/Oracle_installation/17.png" /></p>
+<p>We will get into this tool in the next section.</p>
+<blockquote>
+<p><em>Orace Enterprise Manager 11g</em> uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select. In Mozilla Firefox last versions you can learn how to do it <a href="https://support.mozilla.org/en-US/questions/1101896" target="_blank">here</a>.</p>
+</blockquote>
+<h3 id="after-the-installation">After the installation</h3>
+<p>Once the installation is completed, we will have, among others, the following elements in the Windows Start menu:</p>
+<ul>
+<li>Oracle - OraDb11g home1</li>
+<li><strong>Database Control - orcl</strong>. It will open the Oracle Enterprise Manager 11g accessing the https://localhost:1158/em web page in our system web browser.</li>
+<li>Application Development<ul>
+<li><strong>SQL Plus</strong> - SQL statement editor</li>
+</ul>
+</li>
+<li>Configuration and Migrations Tools<ul>
+<li>Database Configuration Assistant. Allows us to create new instances of databases, delete them, or modify the configuration of an existing one.</li>
+<li>Database Upgrade Assistant. Assistant for upgrading instances from previous versions of Oracle to the current one.</li>
+<li>Oracle Administration Assistant for Windows. Assistant for confOKiguring the Oracle Management Server, a tool that will allow us to administer not only our server but also others on the network.</li>
+<li>Net Configuration Assistant. For connecting to the server and making the server "listen" to requests.</li>
+<li>Net Manager. It also allows us to configure network-related things.</li>
+</ul>
+</li>
+<li>Oracle Installation Products</li>
+<li>Universal Installer. To add or remove modules.</li>
+</ul>
+<h3 id="users">Users</h3>
+<p>Once everything is properly installed, including the Database Instance, there will be several users created. We are mainly interested in 3. We already know the first one:</p>
+<ul>
+<li><strong>SCOTT</strong> (password TIGER): as we already know, it is a normal user for testing.</li>
+</ul>
+<p>We will also have 2 administrators. During the installation, we set the password for both:</p>
+<ul>
+<li><strong>SYSTEM</strong> (password SYSTEM): is the normal administrator we will use.</li>
+<li><strong>SYS</strong> (password SYSTEM): is the super-administrator. It is the only one with SYSDBA privileges, and when we connect to it, we will have to choose the SYSDBA connection mode. There will be tasks that only this user can do.</li>
+</ul>
+<p>Depending on the administration task, we will connect as one or the other, always keeping in mind that SYSTEM must connect as a normal user, and SYS as DBA (Connect as SYSDBA).</p>
+<h2 id="tools-to-manage-the-dbms">Tools to manage the DBMS</h2>
+<p>There are three ways to manage Oracle databases.</p>
+<h3 id="command-line-mode">Command Line Mode</h3>
+<p>The first way, which has traditionally been used, is in command line mode by giving SQL commands from SQL Plus (or similar). The connection to SYSTEM will be as usual, while the connection to SYS, as we have to do a Connect as SYSDBA.</p>
+<p><img alt="Connectassystem" src="../assets/Oracle_installation/SQLPlusSystem.png" /></p>
+<p><img alt="Connectassys" src="../assets/Oracle_installation/SQLPlusSys.png" /></p>
+<p>We could also make the connection as SYS once we have entered SQL*Plus, by doing CONNECT SYS AS SYSDBA. In the image, we have an example where we first connect as SYSTEM, and then as SYS. Note that they will not have access to the same things.</p>
+<p><img alt="Connectassys" src="../assets/Oracle_installation/SQLPlusSystemSys.png" /></p>
+<h3 id="oem-oracle-enterprise-manager">OEM - Oracle Enterprise Manager</h3>
+<p>The other way, which appeared starting from version 7.3, is the Oracle Enterprise Manager (OEM). It is the most convenient way to manage the DBMS, with a completely graphical environment. In the version we use (11g), we will do almost everything from the Enterprise Manager Console.</p>
+<p>We can open it either using the link in the start menu or opening a web browser and typing the oem address in the navigation bar.</p>
+<ul>
+<li>Start menu</li>
+<li>
+<p><img alt="StartMenu" src="../assets/Oracle_installation/oem.png" /></p>
+</li>
+<li>
+<p>Browser</p>
+</li>
+<li><img alt="Browser" src="../assets/Oracle_installation/oem_browser.png" /></li>
+</ul>
+<p>Just remember that if you try to log in as System you do it as a normal user but, if you log in as Sys you have to do it as Sysdba.</p>
+<p><img alt="Connectassystem" src="../assets/Oracle_installation/connectassystem.png" /></p>
+<p><img alt="Connectassysdba" src="../assets/Oracle_installation/connectassysdba.png" /></p>
+<h3 id="sql-developer">SQL Developer</h3>
+<p>We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and later install it on a different machine.</p>
+<p>First, we have to download the last version from oracle web page. We can find it <a href="https://www.oracle.com/database/sqldeveloper/" target="_blank">here</a>.</p>
+<p>We select the "Windows 64-bit with JDK 11 included" as it has the necessary Java version included.</p>
+<p>In our server we open the download page and we get the install program. We need an Oracle account. You can also get it <a href="https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Ep5R9IIvqjpGiz0FmLGjPWkBRnE9Kb8PAeiOVoqrlTzd1A" target="_blank">here</a>, even though it might not be the last available version.</p>
+<p><img alt="SQLDeveloper" src="../assets/Oracle_installation/SQLDeveloper01.png" /></p>
+<p>This archive includes both SQL Developer and an embedded copy of the Java 11 Development Kit (JDK). Simply extract the zip to a fresh directory and run the sqldeveloper.exe in the top directory. The EXE is configured to run the embedded JDK by default.
+thenthen
+You can put it in ""C:\Program Files\Oracle\sqldeveloper" and create a shortcut in the Desktop for easy access.</p>
+<p>To connect to the server just double click on the .exe file or the created shortcut. </p>
+<blockquote>
+<p>If you are on a Windows 2008 Server you might get an "<em>API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL</em>" error. To solve it just download and install Visual C++ for Windows. You can find it <a href="https://www.microsoft.com/es-es/download/details.aspx?id=48145" target="_blank">here</a>.</p>
+</blockquote>
+<p>When it opens you will see this.</p>
+<p><img alt="SQLDeveloper" src="../assets/Oracle_installation/SQLDeveloper02.png" /></p>
+<p>Let's make a connection to the server as user SYSTEM. First click on yhe "+" to create a new connection.</p>
+<p><img alt="SQLDeveloper" src="../assets/Oracle_installation/SQLDeveloper03.png" /></p>
+<p>Then fill in the necessary information (pay attention to the SID, as we have to change it for "orcl" that is the one we defined during the installation process). Then click on "Test" button and check that you get the "Status: Success".</p>
+<p><img alt="SQLDeveloper" src="../assets/Oracle_installation/SQLDeveloper04.png" /></p>
+<p>Then you can press the connect button to connect to the server. Check that the connection has been stablished.</p>
+<p><img alt="SQLDeveloper" src="../assets/Oracle_installation/SQLDeveloper05.png" /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>March 2023&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jmunozji" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ppmunozj" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
